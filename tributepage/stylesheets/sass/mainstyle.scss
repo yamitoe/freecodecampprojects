@@ -1,0 +1,76 @@
+.grid-container
+{   
+    //auto is full size
+    display: grid;
+    //learnt shorthand namespaces is a thing 
+    //not sure how useful this is when intellisense is a thing //more orangized 
+    grid: 
+    {
+        template:
+        {
+            columns: repeat(3,auto);
+            rows: repeat(2,auto);
+            areas: 
+            'header header header'
+            'main main main';
+        }
+      
+        column-gap: 10px;
+        row-gap: 10px;
+        
+       
+    }
+    
+    
+
+    /*grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(2,auto);
+    grid-template-areas: 
+    'header header header'
+    'main main main';
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;*/
+   
+
+   
+ 
+  
+}
+
+header
+{
+    grid-area: header;
+    //background-color: blue;
+}
+
+main
+{
+    grid-area: main;
+    //background-color: aqua;
+}
+
+.nav-container
+{
+    display: flex;
+    //Reset list spacing
+    padding: 0px;
+    margin: 0px;
+
+    li
+    {
+        margin: 10px;
+        padding: 10px;
+        list-style: none;
+        a
+        {
+            padding: 10px;
+            text-decoration: none;
+            &:hover
+            {
+                background-color: aquamarine;
+            }
+        }
+
+    }
+}
+

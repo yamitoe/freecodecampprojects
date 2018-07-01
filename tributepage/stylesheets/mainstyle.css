@@ -1,0 +1,43 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "header header header" "main main main";
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  /*grid-template-columns: repeat(3,auto);
+  grid-template-rows: repeat(2,auto);
+  grid-template-areas: 
+  'header header header'
+  'main main main';
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;*/
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+.nav-container {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
+.nav-container li {
+  margin: 10px;
+  padding: 10px;
+  list-style: none;
+}
+.nav-container li a {
+  padding: 10px;
+  text-decoration: none;
+}
+.nav-container li a:hover {
+  background-color: aquamarine;
+}
+
+/*# sourceMappingURL=file:///C:/Users/Yami/Documents/GitHub/freecodecamp/tributepage/stylesheets/mainstyle.css.map */
