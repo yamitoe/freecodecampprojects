@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(2, auto);
-  grid-template-areas: "header header header" "main main main";
-  grid-column-gap: 10px;
+  grid-template-areas: "header header header" "main . .";
+  grid-column-gap: 15px;
   grid-row-gap: 10px;
   /*grid-template-columns: repeat(3,auto);
   grid-template-rows: repeat(2,auto);
@@ -18,26 +18,42 @@ header {
   grid-area: header;
 }
 
-main {
-  grid-area: main;
+body {
+  background-repeat: repeat;
+  background-image: url(/tributepage/images/bluedots.jpg);
 }
 
-.nav-container {
+main {
+  grid-area: main;
+  background-color: bisque;
+  margin: 10px;
+  text-align: center;
+}
+
+#dropdown-container ul {
   display: flex;
   padding: 0px;
   margin: 0px;
 }
-.nav-container li {
-  margin: 10px;
-  padding: 10px;
+#dropdown-container ul li {
+  background-color: beige;
   list-style: none;
 }
-.nav-container li a {
-  padding: 10px;
-  text-decoration: none;
+#dropdown-container ul li.dropdown-rootlist {
+  margin: 10px;
 }
-.nav-container li a:hover {
+#dropdown-container ul li a {
+  text-decoration: none;
+  padding: 10px;
+}
+#dropdown-container ul li:hover {
   background-color: aquamarine;
 }
+#dropdown-container ul li:hover ul {
+  display: block;
+}
+#dropdown-container ul li ul {
+  position: absolute;
+}
 
-/*# sourceMappingURL=file:///C:/Users/Yami/Documents/GitHub/freecodecamp/tributepage/stylesheets/mainstyle.css.map */
+/*# sourceMappingURL=mainstyle.css.map */
