@@ -1,3 +1,13 @@
+.bio-container, .portrait-container, main {
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-container, .portrait-container, main {
+  display: flex;
+  flex-direction: column;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -5,13 +15,6 @@
   grid-template-areas: "header header header" "main . .";
   grid-column-gap: 15px;
   grid-row-gap: 10px;
-  /*grid-template-columns: repeat(3,auto);
-  grid-template-rows: repeat(2,auto);
-  grid-template-areas: 
-  'header header header'
-  'main main main';
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;*/
 }
 
 header {
@@ -27,7 +30,26 @@ main {
   grid-area: main;
   background-color: bisque;
   margin: 10px;
-  text-align: center;
+}
+
+@media (max-width: 800px) {
+  main {
+    background-color: aqua;
+    max-width: 800px;
+  }
+}
+@media (max-width: 600px) {
+  main {
+    background-color: lightblue;
+    max-width: 600px;
+  }
+}
+.bio-container li, .portrait-container li {
+  margin: 10px;
+}
+
+.bio-container {
+  max-width: 600px;
 }
 
 #dropdown-container ul {
@@ -56,4 +78,4 @@ main {
   position: absolute;
 }
 
-/*# sourceMappingURL=mainstyle.css.map */
+/*# sourceMappingURL=documents/github/freecodecamp/tributepage/stylesheets/mainstyle.css.map */
