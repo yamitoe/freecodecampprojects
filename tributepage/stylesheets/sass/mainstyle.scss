@@ -78,11 +78,13 @@ main
        // max-width: 600px;
     }
 
+   
+
 }
 
 
 
-.bio-container, .portrait-container
+.bio-container
 {
     @extend %perfect-center;
     @extend %flex-column;
@@ -95,9 +97,30 @@ main
  
 }
 
+.portrait-container
+{
+    @extend %perfect-center;
+    @extend %flex-column;
+    min-width: 0;
+    min-height: 0;
+    
+    
+    img
+    {
+        //its that simple, no need for flex-basis tricks(kiss)
+        max-width: 500px;
+        min-width: 400px;
+        width: 100%;
+     
+       
+        
+    }
+}
+
 .bio-container
 {
-    max-width: 600px;
+   max-width: 600px;
+    
 }
 
 
