@@ -1,3 +1,5 @@
+@import "_dropdownstyle";
+
 %perfect-center
 {
     justify-content: center;
@@ -25,7 +27,7 @@
             rows: repeat(2,auto);
             areas: 
             'header header header'
-            'main . .';
+            '. main .';
         }
         column-gap: 15px;
         row-gap: 10px;
@@ -51,7 +53,7 @@ body
 main
 {
     grid-area: main;
-    background-color: bisque;
+    background-color: hsla(195, 80%, 63.5%, 0.9);
 
     margin: 10px;
     //text-align: center;
@@ -63,8 +65,8 @@ main
 {
     main
     {
-        background-color: aqua;
-        max-width: 800px;
+        background-color: hsla(195, 80%, 53.5%, 0.9);
+        //max-width: 800px;
     }
 }
 
@@ -72,8 +74,8 @@ main
 {
     main
     {
-        background-color: lightblue;
-        max-width: 600px;
+        background-color: hsla(195, 80%, 43.5%, 0.9);
+       // max-width: 600px;
     }
 
 }
@@ -98,55 +100,4 @@ main
     max-width: 600px;
 }
 
-#dropdown-container ul
-{
-    display: flex;
-    //Reset list spacing
-    padding: 0px;
-    margin: 0px;
-    
-    li
-    {
-        background-color: beige;
-        list-style: none;
-        //highest parent element is spaced out
-        &.dropdown-rootlist
-        {
-            margin: 10px;
-        }
-       
-        a
-        {
-            text-decoration: none;
-            padding: 10px;
-
-        }
-
-        &:hover
-        {
-            background-color: aquamarine;
-        }
-        //display sub menus
-        &:hover ul
-        {
-            display: block;
-            
-        }
-
-        //hide sub menus
-        ul
-        {
-           // padding-top: 10px;
-           // display: none;
-            position: absolute; //take out of flow
-        }
-        
-      
-
-   
-
-
-    }
-    
-}
 

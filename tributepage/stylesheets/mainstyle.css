@@ -1,64 +1,11 @@
-.bio-container, .portrait-container, main {
-  justify-content: center;
-  align-items: center;
-}
-
-.bio-container, .portrait-container, main {
-  display: flex;
-  flex-direction: column;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(2, auto);
-  grid-template-areas: "header header header" "main . .";
-  grid-column-gap: 15px;
-  grid-row-gap: 10px;
-}
-
-header {
-  grid-area: header;
-}
-
-body {
-  background-repeat: repeat;
-  background-image: url(/tributepage/images/bluedots.jpg);
-}
-
-main {
-  grid-area: main;
-  background-color: bisque;
-  margin: 10px;
-}
-
-@media (max-width: 800px) {
-  main {
-    background-color: aqua;
-    max-width: 800px;
-  }
-}
-@media (max-width: 600px) {
-  main {
-    background-color: lightblue;
-    max-width: 600px;
-  }
-}
-.bio-container li, .portrait-container li {
-  margin: 10px;
-}
-
-.bio-container {
-  max-width: 600px;
-}
-
 #dropdown-container ul {
   display: flex;
   padding: 0px;
   margin: 0px;
+  background-color: rgba(38, 43, 40, 0.534);
 }
 #dropdown-container ul li {
-  background-color: beige;
+  background-color: rgba(33, 49, 39, 0.534);
   list-style: none;
 }
 #dropdown-container ul li.dropdown-rootlist {
@@ -75,7 +22,60 @@ main {
   display: block;
 }
 #dropdown-container ul li ul {
+  display: none;
   position: absolute;
+}
+
+.bio-container, .portrait-container, main {
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-container, .portrait-container, main {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "header header header" ". main .";
+  grid-column-gap: 15px;
+  grid-row-gap: 10px;
+}
+
+header {
+  grid-area: header;
+}
+
+body {
+  background-repeat: repeat;
+  background-image: url(/tributepage/images/bluedots.jpg);
+}
+
+main {
+  grid-area: main;
+  background-color: rgba(87, 199, 236, 0.9);
+  margin: 10px;
+}
+
+@media (max-width: 800px) {
+  main {
+    background-color: rgba(42, 184, 231, 0.9);
+  }
+}
+@media (max-width: 600px) {
+  main {
+    background-color: rgba(22, 155, 200, 0.9);
+  }
+}
+.bio-container li, .portrait-container li {
+  margin: 10px;
+}
+
+.bio-container {
+  max-width: 600px;
 }
 
 /*# sourceMappingURL=documents/github/freecodecamp/tributepage/stylesheets/mainstyle.css.map */
