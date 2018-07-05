@@ -1,38 +1,41 @@
 //for dropdown menu
 #dropdown-container ul
 {
+    
     display: flex;
     //Reset list spacing
     padding: 0px;
     margin: 0px;
-    background-color: hsla(144, 6%, 16%, 0.534);
+    background-color: hsla(0, 3%, 8%, 0.534);
     
     li
     {
-        background-color: hsla(144, 20%, 16%, 0.534);
-        list-style: none;
-        //highest parent element is spaced out
-        &.dropdown-rootlist
-        {
-            margin: 10px;
-        }
        
+        width: 100px;
+        list-style: none;
+      
         a
         {
+            //take up entire space so that is clickable
+            display: block;
             text-decoration: none;
-            padding: 10px;
-            
-
+            color: white;
+            font-size: 18px;
+            padding: 15px;
+            //change anchor colour when within display range    
+            &:hover
+            {
+                color: hsla(0, 78%, 44%, 0.534);
+                
+            }
         }
 
-        &:hover
-        {
-            background-color: aquamarine;
-        }
+     
         //display sub menus
         &:hover ul
         {
             display: block;
+            
             
         }
 
