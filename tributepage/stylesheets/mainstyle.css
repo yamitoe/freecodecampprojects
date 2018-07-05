@@ -20,6 +20,8 @@
 }
 #dropdown-container ul li:hover ul {
   display: block;
+  color: rgba(200, 25, 25, 0.534);
+  border-top: solid 1px;
 }
 #dropdown-container ul li ul {
   display: none;

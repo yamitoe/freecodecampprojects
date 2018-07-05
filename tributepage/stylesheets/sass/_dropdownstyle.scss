@@ -26,7 +26,7 @@
             &:hover
             {
                 color: hsla(0, 78%, 44%, 0.534);
-                
+                //border: solid 1px;
             }
         }
 
@@ -35,6 +35,8 @@
         &:hover ul
         {
             display: block;
+            color: hsla(0, 78%, 44%, 0.534);
+            border-top: solid 1px;
             
             
         }
