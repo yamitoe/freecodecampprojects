@@ -21,6 +21,19 @@ body
     background-color: hsla(88, 46%, 42%, 1);
 }
 
+input
+{
+    &:invalid
+    {
+       border-bottom: 2px solid red;
+       
+    }
+    &:valid
+    {
+        border: 1px solid black;
+    }
+}
+
 .grid-container
 {
     
@@ -49,6 +62,7 @@ header
 main
 {
     grid-area: main;
+    margin: 10px;
 }
 
 .question-container
@@ -65,6 +79,11 @@ main
         @extend %flex-column;
         @extend %input-width;
         
+    }
+
+    .checkbox-container
+    {
+        //display: flex;
     }
 
     .radio-container

@@ -36,7 +36,7 @@
                                     <a href="#">Sub Link</a>
                                 </li>
                                 <li>
-                                        <a href="#">Sub Link</a>
+                                    <a href="#">Sub Link</a>
                                 </li>
                             </ul>
                     </li>
@@ -53,16 +53,16 @@
                 <form onsubmit="return false">
                     <section class="question-input-container">
                         <label for="name">Enter your name</label>
-                        <input placeholder="Full Name" id="name" name="name">
+                        <input placeholder="Full Name" id="name" name="name" required>
                     
                         
                     
                         <label for="email">Email</label>
-                        <input placeholder="Enter your email" id="email" name="email">
+                        <input placeholder="Enter your email" id="email" name="email" required>
                     
                     
                         <label for="phonenumber">Phone Number</label>
-                        <input placeholder="Phone Number" id="phonenumber" name="phonenumber">
+                        <input placeholder="Phone Number" id="phonenumber" name="phonenumber" required>
                        
                     </section>
                     <section class="question-drop-container">
@@ -75,10 +75,24 @@
                         </select>
                     </section>
                     <section class="checkbox-container">
+                        <div>What tea drinks have you tried? Check all that apply.</div>
                         <label>
                             <input type="checkbox" name="teaflavour" value="matcha">
                             <span>Matcha</span>
                         </label>
+                        <label>
+                            <input type="checkbox" name="teaflavour" value="sencha">
+                            <span>Sencha</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="teaflavour" value="black">
+                            <span>Black</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="teaflavour" value="jasmine">
+                            <span>Jasmine</span>
+                        </label>
+
                     </section>
                     <section class="radio-container">
                         <label>How would you rate your expierence with tea?</label>
@@ -123,6 +137,10 @@
             </section>  
     </main>
 
+</section>
+
+<section id="scripts">
+    <script src="scripts/surveyform.js"></script>
 </section>
 
 </body>

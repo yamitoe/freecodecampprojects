@@ -41,6 +41,13 @@ body {
   background-color: #6e9c3a;
 }
 
+input:invalid {
+  border-bottom: 2px solid red;
+}
+input:valid {
+  border: 1px solid black;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -56,6 +63,7 @@ header {
 
 main {
   grid-area: main;
+  margin: 10px;
 }
 
 .question-container .textarea-container label textarea {
