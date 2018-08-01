@@ -51,11 +51,14 @@ function nth(list,number){
     let node = list;
     let data = 0;
     //list = list.rest //might also work but looks awks
-    for(let x = number; x <=0; node = node.rest){
-        data = node.value;
+    for(let x = 0; x <=number; x++){
+        node = node.rest
+      
+        
     }
+    data = node.value;
 
     return data;
 }
 console.log("Find nth list element");
-console.log(nth(test,2));
+console.log(nth(test,1));
