@@ -22,4 +22,13 @@ let reverseArrayInPlace = (arr)=>{
     }
     return arr;
 }
+//better way of writing this
+function reverseArrayInPlaceBetter(array) {
+    for (let i = 0; i < Math.floor(array.length / 2); i++) {
+      let old = array[i];
+      array[i] = array[array.length - 1 - i];
+      array[array.length - 1 - i] = old;
+    }
+    return array;
+  }
 console.log(reverseArrayInPlace(test));

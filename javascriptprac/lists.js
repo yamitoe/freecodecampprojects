@@ -7,7 +7,6 @@ let arrayToList = (arr)=>{
 
         }
     return list;
-
 }
 //Note editor just gets lazy to render after 3 size array
 let myarr = [1,2,3];
@@ -21,10 +20,8 @@ let listToArray = (list)=>{
         if((typeof node.value) !== 'undefined')
         {
             myarr.push(node.value);
-        }
-        
+        }  
     }
-
     return myarr;
 }
 console.log("List to Array");
@@ -33,14 +30,11 @@ console.log(listToArray(test));
 function prepend(elem,list){
     //basically add value to start of list
     let mylist = {};
-
     mylist ={
         value:elem,
         rest:list
     } 
-
     return mylist;
-
 }
 
 console.log("Add data to list");
@@ -48,17 +42,25 @@ console.log((10,test));
 
 function nth(list,number){
     //find list at this number index
-    let node = list;
-    let data = 0;
-    //list = list.rest //might also work but looks awks
-    for(let x = 0; x <=number; x++){
-        node = node.rest
-      
-        
+    let data= list.value;
+    for(let x = 0; x <number; x++){
+        list = list.rest
     }
-    data = node.value;
-
     return data;
 }
 console.log("Find nth list element");
 console.log(nth(test,1));
+//recursive version
+function nth2(list,number){
+
+    let data = list.value;
+    if(number > 0){
+        number--;
+        list = list.rest;
+        data = nth2(list,number);
+    }
+    return data;
+}
+//Note remember recursion in javascript is about 3x slower than loops
+console.log("Find nth list element recursive version");
+console.log(nth2(test,0));
