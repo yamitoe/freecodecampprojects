@@ -1,41 +1,51 @@
 function deepEqual(x,y){
-    let output = false;
-
     //check if object or not
     if((typeof x) === 'object'&& (typeof y)==='object' && x !== null && y!== null){
         let xkeys = Object.keys(x);
         let ykeys = Object.keys(y);   
-        console.log("The key data: "+xkeys[0]);
-        let test = xkeys[0];
-        console.log(x[xkeys[0]]); //square bracket noation
-     
-
-        for(let counter = 0; counter < xkeys.length; counter++)
-        {
-           // x.xkeys[counter];
-            //onsole.log(x.xkeys[counter]);
+        let xindexvalue;
+        let yindexvalue;
+        //if they have same number of keys or not   
+        if(xkeys.length === ykeys.length){
+            for(let counter = 0; counter < xkeys.length; counter++){
+                xindexvalue =  x[xkeys[counter]];
+                yindexvalue = y[ykeys[counter]];
+                //break out of recursion if it returns false //loop ends
+                if(deepEqual(xindexvalue,yindexvalue) === false)
+                {
+                    return false;
+                }
+                //At this point need to recheck if object (nested objects)
+                //or if just values compare
+                //multiple ifs are not efficent 
+                //Therefore recursion would be better use
+            }
+            return true;
+            //if it reaches here it means all are the same
+        }//else this means not equal
+        else{
+            return false;
         }
 
-    }
+    }//if not an object
     else{
         //not couting "2" and 2 are the same (no auto conversions)
-        if(x===y)
-        {
-            output = true;
+        if(x===y){
+            return true;
         }
     }
-
-
-
-    return output;
+    return false;
 }
-let name ={first:2, last:"aye"};
-let name2 = {first:2, last:"aye"};
-deepEqual(2,name);
-//deepEqual();
-console.log(deepEqual(2,2));
-console.log(deepEqual(2,"2"));
-console.log("int and obj: "+deepEqual(2,name.first));
-//when two ojects compare eachother if not pointing to same data then it will be false
-//even if the values are the same
-console.log(deepEqual(name2,name));
+
+
+console.log(deepEqual(2,2));//true
+console.log(deepEqual(2,"2"));//false
+
+//object test
+let obj = {here: {is: "an"}, object: 2};
+console.log(deepEqual(obj, obj));
+// → true
+console.log(deepEqual(obj, {here: 1, object: 2}));
+// → false
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+// → true
