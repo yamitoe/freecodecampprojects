@@ -3,15 +3,11 @@ function deepEqual(x,y){
     if((typeof x) === 'object'&& (typeof y)==='object' && x !== null && y!== null){
         let xkeys = Object.keys(x);
         let ykeys = Object.keys(y);   
-        let xindexvalue;
-        let yindexvalue;
         //if they have same number of keys or not   
         if(xkeys.length === ykeys.length){
-            for(let counter = 0; counter < xkeys.length; counter++){
-                xindexvalue =  x[xkeys[counter]];
-                yindexvalue = y[ykeys[counter]];
+            for(let key of xkeys){
                 //break out of recursion if it returns false //loop ends
-                if(deepEqual(xindexvalue,yindexvalue) === false)
+                if(deepEqual(x[key],y[key]) === false || !ykeys.includes(key))
                 {
                     return false;
                 }
