@@ -1,16 +1,17 @@
-const hummus = function(factor) {
-  const ingredient = function(amount, unit, name) {
-    let ingredientAmount = amount * factor;
-    if (ingredientAmount > 1) {
-      unit += "s";
+let test = "";
+let size = 8;
+
+for(let col=0; col < size; col++){
+  for(let hor=0;hor<size;hor++){
+    if((hor + col) % 2 ==0)
+    {
+      test+= " ";
     }
-    //back ticks //template literals
-    console.log(`${ingredientAmount} ${unit} ${name}`);
-  };
-  ingredient(1, "can", "chickpeas");
-  ingredient(0.25, "cup", "tahini");
-  ingredient(0.25, "cup", "lemon juice");
-  ingredient(1, "clove", "garlic");
-  ingredient(2, "tablespoon", "olive oil");
-  ingredient(0.5, "teaspoon", "cumin");
-};
+    else
+    {
+      test += "#";
+    }
+  }
+    test +="\n"
+}
+console.log(test);

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<body>
+
+    
+    <script type="text/javascript" src="scripts.js"></script>
+    <script>
+        function doublefunc(x,action){
+    for(value of x){
+        action(value);//inputting value into action parameter //"test" in this case
+        //you can consider "action" to be the variable its assigned to
+        // let action = test => ....
+    }
+}
+let arr = [1,2,3,4,5];
+doublefunc(arr, test=>{console.log(`Takeing input from inside function: ${test}`)} );
+
+
+let z = (x,y)=>{
+    console.log(`Above function is similair to this but inversed: ${x+y}`);
+};
+z(2,3);
+
+///===========
+function returnFunction(x){
+    return (z)=>z*x;
+    //no clue why if I add parathesis it doesnt work?
+    //probably scope problem
+}
+let firstnum = returnFunction(5);
+let secondnum = firstnum(2);
+console.log(firstnum);
+console.log(secondnum);
+//==================================
+function argTest(...args) {
+      console.log("calling with", args);
+  }
+  argTest(3, 5, 1);
+
+//unlimited args but double function //changes orginal function
+function noisy(action) {
+    return (...args) => {
+      console.log("calling with", args);
+      let result = action(...args); //action which is a value function
+      //Give that function these args
+      console.log("called with", args, ", returned", result);
+      return result;
+      //instead of returning the args we returned the result of mathmin
+    };
+  }
+  noisy(Math.min)(3, 2, 1);
+//================
+["A", "B"].forEach(l => console.log(l));
+//calling your own function that you made with dot notation similar to foreach
+//console.log(SCRIPTS.filter(s => s.direction == "ttb"));
+
+//that are already implemented
+//higher functions include forEach, map, filter
+
+function filter(array,test){
+    let passed = [];
+    //array of objects
+    for(let element of array){
+        //function value ->tests scripts
+        if(test(element)){
+            passed.push(element);
+        }
+    }
+    return passed;
+}
+console.log(filter(SCRIPTS, script => script.living));
+//calling the premade standard array method
+console.log(SCRIPTS.filter(s => s.direction == "ttb"));
+
+//transforming
+
+function map(array, transform) {
+    let mapped = [];
+    for (let element of array) {
+      mapped.push(transform(element));
+    }
+    return mapped;
+  }
+  
+  let rtlScripts = SCRIPTS.filter(s => s.direction == "rtl");
+  console.log(map(rtlScripts, s => s.name));
+  // → ["Adlam", "Arabic", "Imperial Aramaic", …]
+
+    </script>
+</body>
+
+</html>
