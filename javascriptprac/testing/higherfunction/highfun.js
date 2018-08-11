@@ -1,3 +1,4 @@
+
 function doublefunc(x,action){
     for(value of x){
         action(value);//inputting value into action parameter //"test" in this case
@@ -15,11 +16,13 @@ let z = (x,y)=>{
 z(2,3);
 
 ///===========
+//The problem was indeed scope
+//so when I add parathesis its considred an actaul function therefore
+//I must return its value or else the calculation goes no where 
 function returnFunction(x){
-    return (z)=>z*x;
-    //no clue why if I add parathesis it doesnt work?
-    //probably scope problem
+    return (z)=>{return z*x};
 }
+
 let firstnum = returnFunction(5);
 let secondnum = firstnum(2);
 console.log(firstnum);
@@ -106,7 +109,9 @@ function reduce(array, combine, start) {
   //the actaul standard method reduce lets you omit the starting value
 
 
-   //if array is bigger than 0
+   //if intial value is omitted then
+   //The method will take the first element of the array as its start value 
+   //and start reducing at the second element.
   console.log([1, 2, 3, 4].reduce((a, b) => a + b));
 
 
@@ -118,7 +123,7 @@ function reduce(array, combine, start) {
 
     //reduce will take said array 
     //the function is the aggregate expression
-    //the zero is the starting value
+    //the zero is the starting value as specefied
 
     //As per usual, "count" is the intial starting value in which case is zero
     //[from,to] is the element value of the array we are loooping
@@ -128,7 +133,13 @@ function reduce(array, combine, start) {
 
     //The goal here is to see the count of the ranges
     return script.ranges.reduce((count, [from, to]) => {
+        //gets count 
       return count + (to - from);
     }, 0);
   }
+
+  console.log(SCRIPTS.reduce((a, b) => {
+    //omitted intail is first element of array //ie scripts
+    return characterCount(a) < characterCount(b) ? b : a;
+  }));
 
