@@ -17,8 +17,6 @@ console.log(test2(10));
 
 function returnFunction(x){
     return (z)=>{return z*x};
-    //no clue why if I add parathesis it doesnt work?
-    //probably scope problem
 }
 
 console.log(returnFunction(10)(2));
