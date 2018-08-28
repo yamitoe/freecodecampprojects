@@ -27,19 +27,14 @@ class Group{
 
     has(value){
         //finds if value exsists
-        for(let test of this.group){
-            if(test === value){
-               return true;
-            }
-        }
-        return false;
+       return this.group.includes(value);
 
     }
 
     static from(object){
         let x = new Group();
         for(let value of object){
-            this.group.push(value);
+            x.group.push(value);
         }
         return x;
     }
