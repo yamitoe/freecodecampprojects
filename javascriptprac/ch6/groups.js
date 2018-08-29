@@ -39,3 +39,27 @@ class Group{
         return x;
     }
 }
+//Make this object iterable
+// needs next() return object + 'done' object propety + the data sent back named "value"
+//^^ if missing any of the corrsponding names it won't work 
+class GroupIterator{
+    constructor(array){
+        this.group = array.group;
+        this.counter = 0;
+    }
+    //it must always return an object, no other data type will work
+    //"value" variable must be an object
+    next(){
+        if(this.group.length == this.counter){
+            return {done: true};
+        }
+        let value = {index: this.counter, value: this.group[this.counter]};
+        this.counter++;
+        return {value, done:false};
+    }
+}
+
+Group.prototype[Symbol.iterator] = function(){
+    //this should refer to {group: _ ,_}
+    return new GroupIterator(this);
+};
