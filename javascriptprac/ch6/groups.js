@@ -63,3 +63,30 @@ Group.prototype[Symbol.iterator] = function(){
     //this should refer to {group: _ ,_}
     return new GroupIterator(this);
 };
+
+//testing
+let group = Group.from([10, 20]);
+console.log(group.has(10));
+// → true
+console.log(group.has(30));
+// → false
+group.add(10);
+group.delete(10);
+console.log(group.has(10));
+// → false
+
+
+for (let value of Group.from(["a", "b", "c"])) {
+    console.log(value);
+  }
+  // → a
+  // → b
+  // → c
+//-----------------------
+  //hasOwn ignores prototypes propties //so would ignore itself if in object
+  let map = {one: true, two: true, hasOwnProperty: true};
+  //Work around is call Object.prototype which is what all objects derive from
+  //since hasOwnProperty is one of said propities from that
+  //call explictly calls a method and subs "this" object with first parameter
+  console.log(Object.prototype.hasOwnProperty.call(map,"one"));
+// → true
