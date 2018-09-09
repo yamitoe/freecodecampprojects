@@ -57,7 +57,7 @@ ReactDOM.render(
     document.getElementById("test")
 )
 
-//Example explantion
+//Example #1 explantion
 class Toggle extends React.Component {
     constructor(props) {
       super(props);
@@ -79,6 +79,24 @@ class Toggle extends React.Component {
       return (
           //Notice that from the DOM's prespective we are calling
           //"this" in a global scope and not from a object method or class
+
+          //Bascailly the reason this is happing in this scenrio is that
+          //We do not immediatly invoke the onclick, but we do so when clicked
+        //==================================
+          //Reason why that would call global in javascript
+
+          //For example: 
+          //Let x = t.someFunc;       (Stored the function)
+          //x(); --//Look its called globally  (Called the function later)
+          //Making the context of "this" refer to the global value instead of the current objects
+
+          //To be more specefic notice that it calls .method and not .method()
+          //So it calls .method then calls .method() makeing it global
+          
+          //Its just that the way we called the method would make the call global
+          
+
+
         <button onClick={this.handleClick}>
           {this.state.isToggleOn ? 'ON' : 'OFF'}
         </button>
