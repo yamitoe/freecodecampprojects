@@ -21,8 +21,21 @@ function Person(props){
 class Person extends React.Component{
     constructor(props){
         super(props);
-        this.state = "Some value"
+        //special property
+        this.state = "Some value";
     }
+    //lifecycle hooks //specially named methods
+
+    //When DOM is created
+    compareDidMount(){
+
+    }
+    //When DOM is deleted
+    compareWillUnmount(){
+
+    }
+
+
 
     render(){
           //must return react element
@@ -43,3 +56,37 @@ ReactDOM.render(
     <Person/>,
     document.getElementById("test")
 )
+
+//Example explantion
+class Toggle extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {isToggleOn: true};
+  
+      // This binding is necessary to make `this` work in the callback
+      //bind will set the value of "this" no matter the contexts it was called
+      //So in this case we bind the referance of "this" to our class object
+      this.handleClick = this.handleClick.bind(this);
+    }
+  
+    handleClick() {
+      this.setState(state => ({
+        isToggleOn: !state.isToggleOn
+      }));
+    }
+  
+    render() {
+      return (
+          //Notice that from the DOM's prespective we are calling
+          //"this" in a global scope and not from a object method or class
+        <button onClick={this.handleClick}>
+          {this.state.isToggleOn ? 'ON' : 'OFF'}
+        </button>
+      );
+    }
+  }
+  
+  ReactDOM.render(
+    <Toggle />,
+    document.getElementById('root')
+  );
