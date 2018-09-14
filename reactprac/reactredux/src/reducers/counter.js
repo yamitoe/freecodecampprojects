@@ -1,5 +1,5 @@
 //For this.state.count //Covers add and minus
-export default (state = 0,action)=>{
+export let counter = (state = 5,action)=>{
     switch(action.type){
         case "ADD":
             return state +1

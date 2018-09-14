@@ -13,8 +13,6 @@ import { Component } from 'react'; //quick of React.Component
         this.myChange= this.myChange.bind(this);
     }
 
-  
-
 
     addByAmount(event){
         let x = parseInt(this.state.value,10);
@@ -31,15 +29,17 @@ import { Component } from 'react'; //quick of React.Component
 
 
     render(){
+        //The attributes from index (counter: 3, addCounter: func()...)
+        const {counter,addCounter,minusCounter} = this.props;
         return(
             <div>
                 <div>
-                    The counter is at: {this.state.count}
+                    The counter is at: {counter}
                     <div>Also this says "{this.state.hamburger}"</div>
                 </div>
-
-                <button onClick={this.addCounter}>Add</button>
-                <button onClick={this.minusCounter}>Minus</button>
+                
+                <button onClick={addCounter}>Add</button>
+                <button onClick={minusCounter}>Minus</button>
 
                 <form onSubmit={this.addByAmount}>
                     <label>Add an number to increment by</label>
