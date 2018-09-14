@@ -1,72 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Component } from 'react'; //quick of React.Component
+import {Counter} from './components/Counter'
 
+import { createStore } from 'redux'
+import counter from './reducers'
 
 //start all in one, then refractor into smaller files
 //App will be a buttons that display a number
 //Write as a normal react code then add redux later
 
-//React component
-class Counter extends Component{
-    constructor(props){
-        super(props);
-        this.state = {count: 0,hamburger:"hamburger",value:0};
-        //bind 
-        this.addCounter = this.addCounter.bind(this);
-        this.minusCounter = this.minusCounter.bind(this);
-        this.addByAmount = this.addByAmount.bind(this);
-        this.myChange= this.myChange.bind(this);
-    }
+// Steps for redux
+//Goal is to not have a this.state in react so that its all centralized 
+// in redux
+//===============================
+//Make action creator
 
-  
-
-    addCounter(){
-        this.setState(state=>({count: state.count + 1}));
-    }
-
-    addByAmount(event){
-        let x = parseInt(this.state.value,10);
-        this.setState(state=>({count: state.count + x}));
-        event.preventDefault();
-    }
-
-    minusCounter(){
-        this.setState(state=>({count: state.count - 1}));
-    }
-
-    myChange(e){
-        this.setState({value: e.target.value});
-    }
+//Make reducer 
+//Anything that directly changed the state should now be a reducer
+//Add,Minus, Add by number
 
 
+//Reducer pretty much the starting point of the data 
+//which is then stored in store
 
-    render(){
-        return(
-            <div>
-                <div>
-                    The counter is at: {this.state.count}
-                    <div>Also this says "{this.state.hamburger}"</div>
-                </div>
+//action - add or minus
+//reducer - if increase add else decrase
+//state - store all that info
 
-                <button onClick={this.addCounter}>Add</button>
-                <button onClick={this.minusCounter}>Minus</button>
-
-                <form onSubmit={this.addByAmount}>
-                    <label>Add an number to increment by</label>
-                    <div>
-                        <input value={this.state.value} onChange={this.myChange} ></input>
-                    </div>
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
-            
-        );
-    }
-}
+const store = createStore(counter);
 
 ReactDOM.render(
-    <Counter/>,
+    <Counter
+    //pass all as object but orginal code needs a function so we sending anon function
+    //dispatch calls store whcih call reducer
+        addCounter={()=>store.dispatch({type: "ADD"})}
+        minusCounter={()=>store.dispatch({type: "MINUS"})}
+    />,
     document.getElementById("root")
 )
 
