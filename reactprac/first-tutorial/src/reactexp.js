@@ -8,12 +8,13 @@ let x = <div>I'm a DOM element</div>;
 function Person(props){
     //must return react element
     return(
-        //Nameing scheme in react
+        //Nameing scheme in react (camalcase)
         <section className>
-            <div>Hi I am a person</div>
+            <div>Hi I am a person and 5+5= {5+5}</div>
             <div>This allows me to chain child elements</div>
             <div>Only one root element is allowed in JSX(Exceptions apply)</div>
         </section>
+        //curly braces are the equivalent of template literal 
     
     );
 }
