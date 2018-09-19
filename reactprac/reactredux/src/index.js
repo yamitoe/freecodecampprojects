@@ -16,6 +16,7 @@ const render = ()=>ReactDOM.render(
     //Call the add by value one in the compoents instead?
         counter={store.getState()} //the current counter
         addCounter={()=>store.dispatch({type: "ADD"})}
+        addByAmount={()=>store.dispatch({type:"ADD", counter})}
         minusCounter={()=>store.dispatch({type: "MINUS"})}
     />,
     document.getElementById("root")

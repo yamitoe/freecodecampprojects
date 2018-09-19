@@ -3,5 +3,5 @@ export default function add(amount){
         type: "ADD",
         amount
         //quick form
-    }
+    };
 }
