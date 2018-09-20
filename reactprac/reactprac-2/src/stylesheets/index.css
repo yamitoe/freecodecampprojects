@@ -1,0 +1,14 @@
+.nav-bar .small-icon {
+  width: 100px;
+  border-radius: 30px; }
+
+.nav-bar .flex-container {
+  display: flex; }
+
+.nav-bar figure {
+  width: 200px; }
+  .nav-bar figure:hover a {
+    color: gray; }
+  .nav-bar figure a {
+    text-decoration: none;
+    color: black; }

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Component } from 'react';
-import {NavBar} from './components/navbar';
+import {Navbar} from './components/navbar';
+import "./stylesheets/index.css"
 
 class IndexPage extends Component{
     constructor(props){
@@ -17,18 +18,15 @@ class IndexPage extends Component{
         .then(response =>response.json())
         .then(json=>{
             let arr = [];
-            for(let x = 0; x < 2;x++){
+            for(let x = 0; x < 5;x++){
                 //console.log(json[x].title);
-                arr.push(<NavBar img={json[x].url} desc={json[x].title}
-                key={x}/>);
+                arr.push(<Navbar img={json[x].url} desc={json[x].title}
+                key={x} className="small-icon"/>);
             }
             this.setState({jsonData: arr});
-            return;
-            
+            return;   
         })
-
-        return this.state.jsonData;
-        
+        return this.state.jsonData;   
     }
 
     render(){
@@ -36,7 +34,7 @@ class IndexPage extends Component{
             <div>
                 <header>
                     <section className="nav-bar">
-                        <nav>{this.navbarfunc()}</nav>
+                        <nav className="flex-container">{this.navbarfunc()}</nav>
                     </section>
                 </header>
                 <main>

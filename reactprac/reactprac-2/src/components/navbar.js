@@ -1,14 +1,14 @@
 import React from 'react';
 
-export function NavBar(props){
+export function Navbar(props){
     return(
-        <div>
-            <figure>
-                <a>
-                    <img src={props.img} alt={props.img} />
-                    <figcaption>{props.desc}</figcaption>
-                </a>
-            </figure>
-        </div>
+        
+        <figure>
+            <a href="#" >
+                <img src={props.img} alt={props.desc} className={props.className} />
+                <figcaption className={props.className}>{props.desc}</figcaption>
+            </a>
+        </figure>
+       
     )
 }

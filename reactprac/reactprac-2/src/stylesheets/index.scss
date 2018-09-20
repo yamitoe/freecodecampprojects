@@ -1,0 +1,29 @@
+
+.nav-bar{
+    .small-icon{
+        width: 100px;
+        border-radius: 30px;
+    }
+
+    .flex-container{
+        display:flex;
+        //flex-wrap: wrap; 
+    }
+
+    figure{
+        width: 200px;
+        &:hover{
+            a{
+                //colour of text
+                color: gray;
+            }
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+            
+        }
+    }
+
+}
