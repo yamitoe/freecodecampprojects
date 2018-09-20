@@ -1,12 +1,14 @@
 .nav-bar .small-icon {
-  width: 100px;
+  width: 100%;
   border-radius: 30px; }
 
 .nav-bar .flex-container {
   display: flex; }
 
 .nav-bar figure {
-  width: 200px; }
+  margin: 22px;
+  min-width: 80px;
+  max-width: 100px; }
   .nav-bar figure:hover a {
     color: gray; }
   .nav-bar figure a {

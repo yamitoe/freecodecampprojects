@@ -1,7 +1,7 @@
 
 .nav-bar{
     .small-icon{
-        width: 100px;
+        width: 100%;
         border-radius: 30px;
     }
 
@@ -11,7 +11,9 @@
     }
 
     figure{
-        width: 200px;
+        margin:22px;
+        min-width: 80px;
+        max-width: 100px;
         &:hover{
             a{
                 //colour of text
